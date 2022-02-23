@@ -62,9 +62,9 @@ password="${6}"
 # Core Script
 ##########################################################################################
 JIMServerName=(`/usr/bin/curl "$URL/JSSResource/ldapservers" \
-								--silent \
-								--request GET \
-								--user "$username:$password" \
-								| /usr/bin/xpath -e "//ldap_servers/ldap_server/name/text()" 2> /dev/null`)
+				--silent \
+				--request GET \
+				--user "$username:$password" \
+				| /usr/bin/xpath -e "//ldap_servers/ldap_server/name/text()" 2> /dev/null`)
 
 echo "The name returned from JAMF for the JIM Server is: ${JIMServerName}"
